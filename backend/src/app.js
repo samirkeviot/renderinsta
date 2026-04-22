@@ -6,7 +6,7 @@ const uesrrouter = require("./routes/user.routes");
 const postrouter = require("./routes/post.router");
 const likerouter = require("./routes/like.router");
 
-app.use(cors());
+app.use(cors({origin:"*"}));
 app.use(cookieparse());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
