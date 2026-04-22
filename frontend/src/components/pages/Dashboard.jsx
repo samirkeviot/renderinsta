@@ -26,7 +26,7 @@ const Dashboard = () => {
   const allposts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/posts/posts",
+        `${process.env.PORT}/api/posts/posts`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -54,7 +54,7 @@ const Dashboard = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/posts/post",
+        `${process.env.PORT}/api/posts/post`,
         formData,
         {
           headers: {
@@ -81,7 +81,7 @@ const Dashboard = () => {
   const handlelike = async (post) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/likes/${post._id}`,
+        `${process.env.PORT}/api/likes/${post._id}`,
         {},
         {
           headers: {
